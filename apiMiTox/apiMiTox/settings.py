@@ -80,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'db.apimitox',
-        'USER': 'postgres',
+        'USER': 'postgresql',
         'PASSWORD': 'Dr4g0n3k',
         'HOST': 'localhost',
         'PORT': '5432',
