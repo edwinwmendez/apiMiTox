@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from post.api.router import router_post
 from apiAuth.api.router import router_auth
+from frase.api.router import router_frase
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('apiPost/', include(router_post.urls)),
     path('apiAuth/', include(router_auth.urls)),
+    path('frases/', include(router_frase.urls)),
 ]

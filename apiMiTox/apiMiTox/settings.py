@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'post',
     'apiAuth',
+    'frase',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'db.apimitox',
-        'USER': 'postgresql',
+        'USER': 'postgres',
         'PASSWORD': 'Dr4g0n3k',
         'HOST': 'localhost',
         'PORT': '5432',
