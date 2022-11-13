@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Autorizacion(models.Model):
+class Usuario(models.Model):
     unidad = models.CharField(max_length=50, null=False, blank=False)
     usuario = models.CharField(max_length=20, unique=True, blank=True, null=True)
     nombre = models.CharField(max_length=50, blank=True, null=True)
@@ -13,11 +13,11 @@ class Autorizacion(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.unidad
+        return self.unidad + ' - ' + self.usuario
 
 
 class CodigoAuth(models.Model):
-    usuario = models.ForeignKey(Autorizacion, on_delete=models.CASCADE, null=True, blank=True)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, blank=True)
     codigo_auth = models.CharField(max_length=25, null=True, blank=True)
     descripcion = models.CharField(max_length=100, null=True, blank=True)
     estado = models.BooleanField(default=True)

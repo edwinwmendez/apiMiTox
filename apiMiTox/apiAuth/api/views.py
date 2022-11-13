@@ -1,11 +1,11 @@
 from rest_framework.viewsets import ModelViewSet
-from apiAuth.models import Autorizacion, CodigoAuth
-from apiAuth.api.serializers import AutorizacionSerializer, CodigoAuthSerializer
+from apiAuth.models import Usuario, CodigoAuth
+from apiAuth.api.serializers import UsuarioSerializer, CodigoAuthSerializer
 
 
-class AutorizacionApiViewSet(ModelViewSet):
-    serializer_class = AutorizacionSerializer
-    queryset = Autorizacion.objects.all()
+class UsuarioApiViewSet(ModelViewSet):
+    serializer_class = UsuarioSerializer
+    queryset = Usuario.objects.all()
 
 class CodigoAuthApiViewSet(ModelViewSet):
     serializer_class = CodigoAuthSerializer

@@ -1,14 +1,14 @@
 from django.contrib import admin
-from  apiAuth.models import Autorizacion, CodigoAuth
+from  apiAuth.models import Usuario, CodigoAuth
 
 
 # Register your models here.
 # @admin.register(Post)
-class AutorizacionAdmin(admin.ModelAdmin):
+class UsuarioAdmin(admin.ModelAdmin):
     list_display = ('unidad', 'usuario')
 
 
-admin.site.register(Autorizacion, AutorizacionAdmin)
+admin.site.register(Usuario, UsuarioAdmin)
 
 
 class CodigoAuthAdmin(admin.ModelAdmin):
