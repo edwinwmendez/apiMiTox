@@ -10,5 +10,5 @@ class CategoriaSerializer(ModelSerializer):
 class FraseSerializer(ModelSerializer):
     class Meta:
         model = Frase
-        fields = ['id', 'frase', 'categoria', 'autor', 'estado']
+        fields = ['id', 'frase', 'categoria', 'autor', 'significado', 'estado']
 
