@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dbapimitox',
-        'USER': 'postgres',
+        'USER': 'apimitox',
         'PASSWORD': 'Dr4g0n3k',
         'HOST': 'localhost',
         'PORT': '5432',
