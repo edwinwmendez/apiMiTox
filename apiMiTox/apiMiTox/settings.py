@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'apiMiTox.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db.apimitox',
+        'NAME': 'dbapimitox',
         'USER': 'postgres',
         'PASSWORD': 'Dr4g0n3k',
         'HOST': 'localhost',
