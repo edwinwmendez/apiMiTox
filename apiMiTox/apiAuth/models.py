@@ -2,18 +2,37 @@ from django.db import models
 
 
 # Create your models here.
-class Usuario(models.Model):
+class Unidad(models.Model):
     unidad = models.CharField(max_length=50, null=False, blank=False)
-    usuario = models.CharField(max_length=20, unique=True, blank=True, null=True)
-    nombre = models.CharField(max_length=50, blank=True, null=True)
-    apellidos = models.CharField(max_length=50, blank=True, null=True)
-    cargo = models.CharField(max_length=50, blank=True, null=True)
     estado = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.unidad + ' - ' + self.usuario
+        return self.unidad
+
+    class Meta:
+        verbose_name = 'Unidad'
+        verbose_name_plural = 'Unidades'
+
+
+class Usuario(models.Model):
+    unidad = models.ForeignKey(Unidad, on_delete=models.CASCADE)
+    usuario = models.CharField(max_length=20, unique=True, blank=True, null=True)
+    nombre = models.CharField(max_length=50, blank=True, null=True)
+    apellidos = models.CharField(max_length=50, blank=True, null=True)
+    cargo = models.CharField(max_length=50, blank=True, null=True)
+    celular = models.CharField(max_length=20, blank=True, null=True)
+    estado = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.usuario
+
+    class Meta:
+        verbose_name = 'Usuario'
+        verbose_name_plural = 'Usuarios'
 
 
 class CodigoAuth(models.Model):
@@ -26,3 +45,7 @@ class CodigoAuth(models.Model):
 
     def __str__(self):
         return self.codigo_auth
+
+    class Meta:
+        verbose_name = 'CodigoAuth'
+        verbose_name_plural = 'CodigosAuth'

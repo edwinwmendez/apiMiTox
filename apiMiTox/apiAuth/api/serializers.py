@@ -1,6 +1,11 @@
 from rest_framework.serializers import ModelSerializer
-from apiAuth.models import  Usuario, CodigoAuth
+from apiAuth.models import  Usuario, CodigoAuth, Unidad
 
+
+class UnidadSerializer(ModelSerializer):
+    class Meta:
+        model = Unidad
+        fields = ['id', 'unidad', 'estado']
 
 class UsuarioSerializer(ModelSerializer):
     class Meta:
